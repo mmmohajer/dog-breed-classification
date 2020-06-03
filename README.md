@@ -1,32 +1,26 @@
-# 🚜 Predicting The Sale Price of Bulldozers Using Machine Learning
+# End - to - End Multicalass Dog Breed Classification
 
-In this notebook we are going to go through an example machine learning project with the goal of predicting the sale price of bulldozers.
+This notebook builds an end-to-end multi-class image classifier using TensorFlow 2.0 and TensorFlow Hub.
 
-## 1. Problem Definition
+## 1. Problem
 
-> How well can we predict the future sale price of a bulldozer, given its characteristics and previous examples of how much similar bulldozers have been sold for?
+Identifying the breed of a dog given an image of a dog.
+
+When I am sitting at the cafe and I take a photo of a dog, I want to know what breed of dog it is. 
 
 ## 2. Data
 
-The data is downloaded from Kaggle Bluebook for Bulldozers competition:
-https://www.kaggle.com/c/bluebook-for-bulldozers/data
-
-The data for this competition is split into three parts:
-
-- Train.csv - is the training set, which contains data through the end of 2011.
-- Valid.csv - is the validation set, which contains data from January 1, 2012 - April 30, 2012 You make predictions on this set throughout the majority of the competition. Your score on this set is used to create the public leaderboard.
-- Test.csv - is the test set, which won't be released until the last week of the competition. It contains data from May 1, 2012 - November 2012. Your score on the test set determines your final rank for the competition.
+The data we are using is from Kaggle's dog breed identification competition (https://www.kaggle.com/c/dog-breed-identification/data).
 
 ## 3. Evaluation
 
-The evaluation metric for this competition is the RMSLE (root mean squared log error) between the actual and predicted auction prices.
-
-For more on the evaluation of this project check: 
-https://www.kaggle.com/c/bluebook-for-bulldozers/overview/evaluation
-
-**Note:** The goal for most regression evaluation metrics is to minimize the error. For example, our goal for this project will be to build a machine learning model which minimises RMSLE.
+The evaluation is a file with prediction probabilities for each dog breed of each test image. (https://www.kaggle.com/c/dog-breed-identification/overview/evaluation)
 
 ## 4. Features
 
-Kaggle provides a data dictionary detailing all of the features of the dataset.
-https://www.kaggle.com/c/bluebook-for-bulldozers/data
+Some information about the data:
+
+- We are dealing with images (unstructured data) so it is probably best we use deep learning/transfer learning.
+- There are 120 breeds of dogs (this means there are 120 different calsses).
+- There are around 10000 + images in the training set (these images have labek).
+- There are around 10000 + images in the test set (these images have no label, because we want to predict them).
